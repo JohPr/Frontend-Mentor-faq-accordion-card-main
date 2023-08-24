@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 12px;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+:root {
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+.bg {
+    min-height: 100vh;
+    min-width: 100%;
+    background: linear-gradient(var(--soft-violet), var(--soft-blue));
+}
+
+.grid {
+    min-height: 100vh;
+    min-width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.faq-div {
+    height: 40rem;
+    width: clamp(60rem, 70vw, 70rem);
+    background: white;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+}
+
+.colum {
+    overflow: hidden;
+}
+
+.left {
+    position: relative;
+}
+
+.left-mobile {
+
+    display: none;
+    
+}
+
+
+
+.right {
+}
+
+.woman {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -13%;
+}
+
+
+.box {
+    position: absolute;
+    top: 56%;
+    transform: translateY(-50%);
+    left: -8.3%;
+    z-index: 1;
+}
+
+.bg-pattern {
+    position: absolute;
+    top: -35%;
+    left: -100%;
+}
+
+.table {
+    margin: 4rem 2rem 0;
+}
+
+h1 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin: 3rem 2rem 0;
+}
+
+.row {
+    display: inline-block;
+    border-bottom: 1px solid var(--dark-grayish-blue);
+    margin-bottom: 2rem;
+    width: 95%;
+    cursor: pointer;
+}
+
+.row th {
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding-bottom: 1rem;
+    
+}
+
+.row svg {
+    position: absolute;
+    right: 4.5rem;
+    transition: transform .5s;
+}
+
+.arrow {
+    transform: rotateX(180deg);
+}
+
+.row td {
+    font-size: 1rem;
+    padding: 0.5rem;
+    line-height: 1.4rem;
+}
+
+@media(max-width: 1030px) {
+    .faq-div {
+        height: 60rem;
+        width: clamp(60rem, 70vw, 70rem);
+        grid-template-columns: auto;
+        margin: 20rem 0;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .left-mobile {
+        display: inline-block;
+        position: relative;
+    }
+
+    .left-mobile svg {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: clamp(-50%, -75%, -100%);
+    }
+
+    .box {
+        display: none;
+    }
+}
+
+@media(max-width: 990px) {
+    .faq-div {
+        width: clamp(30rem, 90vw, 60rem);
+        grid-template-columns: auto;
+    }
+}
